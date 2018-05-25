@@ -1,0 +1,426 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "choose my ride",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "GetCheapestIntent",
+          "slots": [
+            {
+              "name": "dest",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "I am going to {dest}",
+                "Going to {dest}",
+                "{dest}"
+              ]
+            },
+            {
+              "name": "src",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "Starting from {src}",
+                "{src}"
+              ]
+            }
+          ],
+          "samples": [
+            "cheapest please",
+            "cheapest ",
+            "what is the cheapest",
+            "get cheapest"
+          ]
+        },
+        {
+          "name": "AMAZON.MoreIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateSettingsIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageUpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollRightIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollLeftIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollUpIntent",
+          "samples": []
+        },
+        {
+          "name": "GetCheapestQuickIntent",
+          "slots": [
+            {
+              "name": "src",
+              "type": "AMAZON.PostalAddress"
+            },
+            {
+              "name": "dest",
+              "type": "AMAZON.PostalAddress"
+            }
+          ],
+          "samples": [
+            "from {src} to {dest} get cheapest",
+            "cheapest ride from {src} to {dest}",
+            "less cost from {src} to {dest}",
+            "less price from {src} to {dest}",
+            "cheapest from {src} to {dest}",
+            "get cheapest from {src} to {dest}"
+          ]
+        },
+        {
+          "name": "GetEstimatesSummaryIntent",
+          "slots": [
+            {
+              "name": "dest",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "going to {dest}",
+                "{dest}",
+                "I am going to {dest}"
+              ]
+            },
+            {
+              "name": "src",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "{src}",
+                "from {src}"
+              ]
+            }
+          ],
+          "samples": [
+            "get estimates summary",
+            "get estimates",
+            "summary",
+            "Get summary"
+          ]
+        },
+        {
+          "name": "GetEstimatesSummaryQuickIntent",
+          "slots": [
+            {
+              "name": "src",
+              "type": "AMAZON.PostalAddress"
+            },
+            {
+              "name": "dest",
+              "type": "AMAZON.PostalAddress"
+            }
+          ],
+          "samples": [
+            "from {src} to {dest} get summary",
+            "from {src} to {dest} get estimates",
+            "Get estimates from {src} to {dest}",
+            "Summary from {src} to {dest}",
+            "Get summary from {src} to {dest}",
+            "Get estimates summary from {src} to {dest}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "GetCheapestIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dest",
+              "type": "AMAZON.PostalAddress",
+              "confirmationRequired": true,
+              "elicitationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.1102839921562.1501084155087",
+                "elicitation": "Elicit.Slot.1102839921562.1501084155087"
+              }
+            },
+            {
+              "name": "src",
+              "type": "AMAZON.PostalAddress",
+              "confirmationRequired": true,
+              "elicitationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.1102839921562.467164708435",
+                "elicitation": "Elicit.Slot.1102839921562.467164708435"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetEstimatesSummaryIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dest",
+              "type": "AMAZON.PostalAddress",
+              "confirmationRequired": true,
+              "elicitationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.868808407123.453027810882",
+                "elicitation": "Elicit.Slot.467598514370.159821266476"
+              }
+            },
+            {
+              "name": "src",
+              "type": "AMAZON.PostalAddress",
+              "confirmationRequired": true,
+              "elicitationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.868808407123.178458741487",
+                "elicitation": "Elicit.Slot.467598514370.1217617710358"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1047930868928.1300097833991",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please tell me the postal address"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.976889009850",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To confirm you are going from {citySource} to {cityDest} right?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.92842981894.838315422816",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which city are you starting from "
+          },
+          {
+            "type": "PlainText",
+            "value": "What is the starting city"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you starting from?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.92842981894.495696326597",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which city are you going to"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you going?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.706288715089.1402011052020",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your first name"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.105294916681",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Is {firstname} {lastname} your full name?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1006025434776.665239397033",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "is {firstname} your first name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1356052236206.1259755218947",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "last name please"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1356052236206.1259755218947",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Your last name is {lastname} right "
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1102839921562",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "So {name} you are going from {src} to {dest} right?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1102839921562.1501084155087",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "destination address please"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your destination address"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you going to?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1102839921562.1501084155087",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You just said {dest} right?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1102839921562.467164708435",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where are you starting from?"
+          },
+          {
+            "type": "PlainText",
+            "value": "and you are starting from?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1102839921562.467164708435",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Starting from {src} right?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.467598514370.159821266476",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "destination address please"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your destination address?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you going?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.467598514370.1217617710358",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where are you starting from?"
+          },
+          {
+            "type": "PlainText",
+            "value": "and you are starting from?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.868808407123.453027810882",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{dest} it is right"
+          },
+          {
+            "type": "PlainText",
+            "value": "You just said {dest} right"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.868808407123.178458741487",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "to confirm you said {src} right?"
+          }
+        ]
+      }
+    ]
+  }
+}
